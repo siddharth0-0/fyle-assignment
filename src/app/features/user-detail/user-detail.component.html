@@ -1,0 +1,68 @@
+<app-nav-bar></app-nav-bar>
+<div class="main-wrapper" >
+    <div class="detail-wrap" *ngIf="userData">
+        <div class="left-block">
+            <img src="{{userData.avatar_url}}" alt="user">
+        </div>
+        <div class="right-block">
+            <h2>{{userData.name}}</h2>
+            <h6 >{{userData.bio}}</h6>
+            <p>{{userData.location}}</p>
+        </div>
+    </div>
+
+    <div class="op-row">
+        <div class="pagination-wrap">
+            <pagination-controls (pageChange)="activePage= $event; getRepos($event)" class="my-pagination"></pagination-controls>
+        </div>
+        <div class="show-box">
+            <label for="show">Show : </label>
+            <select name="" id="" (change) = "changePerPageItems($event)">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    </div>
+    
+
+    <div class="repo-wrap" *ngIf="userData">
+        <div class="repo-block" *ngFor="let item of repoList | paginate:{itemsPerPage:perPageItems,currentPage:activePage,totalItems:userData.public_repos}; let i =index">
+            <div class="rep-name">
+                <h4>{{item.name}}</h4>
+            </div>
+            <div class="rep-des">
+                <p>{{item.description}}</p>
+            </div>
+            <div class="rep-topic" >
+                <div class="topic-block" *ngFor="let topic of repoList[i].topics">
+                    <p>{{topic}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skel-wrap" *ngIf = "repoList.length ===0">
+        <div class="no-repo" >
+            <h4></h4>
+            <div class="dis-skel">
+                <p></p>
+            </div>
+            <div class="topic-skel">
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+        <div class="no-repo" >
+            <h4></h4>
+            <div class="dis-skel">
+                <p></p>
+            </div>
+            <div class="topic-skel">
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+   
+</div>

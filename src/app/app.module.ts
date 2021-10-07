@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ShareModule } from './common/share.module';
+import { FetchRepoService } from './common/provider/fetch-repo.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ShareModule
   ],
-  providers: [],
+  providers: [FetchRepoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
