@@ -4,6 +4,7 @@
     padding: 15px;
     display: flex;
     align-items: center;
+    position:absolute;
     .img-box{
         cursor: pointer;
         img{
@@ -15,6 +16,8 @@
         margin: 0 15px;
         font: normal normal 600 20px Soleil;
         letter-spacing: 1.5px;
-        color: #3E3E3E;
+        // color: #3E3E3E;
+        color: #FFFF;
+        display: none;
     }
 }

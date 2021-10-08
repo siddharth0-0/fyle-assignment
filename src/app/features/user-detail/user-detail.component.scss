@@ -37,7 +37,7 @@
         padding: 20px 40px;
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
         .show-box{
             label{
                 font: normal normal 600 16px Soleil;
@@ -58,13 +58,16 @@
         flex-wrap: wrap;
         justify-content: space-between;
         .repo-block{
-            width: 600px;
-            height: 250px;
+            width: 550px;
+            height: 260px;
             padding: 15px;
-            border: 2px solid;
             border-radius: 10px;
             margin: 20px 0;
             box-sizing: border-box;
+            background-image: url(../../../assets/img/bac.png);
+            background-size: cover;
+            box-shadow: 0px 5px 10px #00000017;
+            text-transform: capitalize;
             .rep-name{
                 margin: 10px 0;
                 width: 100%;
@@ -72,16 +75,15 @@
                 h4{
                     font: normal normal 600 20px Soleil;
                     letter-spacing: 0.80px;
-                    text-transform: capitalize;
+                    cursor: pointer;
                     color: cornflowerblue;
                 }
             }
             .rep-des{
                 margin: 10px 0;
                 p{
-                    font: normal normal 600 14px Soleil;
-                    letter-spacing: 0.80px;
-                    text-transform: capitalize;
+                    font: normal normal normal 13px Soleil;
+                    letter-spacing: 1px;
                 }
             }
             .rep-topic{
@@ -93,47 +95,20 @@
                     margin-top: 15px;
                 }
                 p{
-                    font: normal normal 600 15px Soleil;
-                    margin: 0 10px;
-                    background: cornflowerblue;
+                    font: normal normal normal 12px Soleil;
+                    margin-right: 10px;
+                    background: #34515d;
                     color: white;
                     width: 100px;
-                    text-transform: capitalize;
-                    height: 35px;
+                    height: 30px;
                     border-radius: 5px;
                     text-align: center;
                     padding: 5px;
                 }
             }
         }
-        .no-repo{
-            width: 600px;
-            height: 250px;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0px 5px 10px #00000017;
-            h4{
-                width: 300px;
-                background: #CCCC;
-                height: 35px;
-            }
-            .dis-skel{
-                p{
-                    width: 280px;
-                    background: #CCCC;
-                    height: 30px; 
-                }
-            }
-            .topic-skel{
-                display: flex;
-                p{
-                    margin: 0 10px;
-                    width: 90px;
-                    background: #CCCC;
-                    height: 20px; 
-                }
-            }
+        .repo-block:hover{
+            box-shadow: 0px 10px 15px #00000017;
         }
     }
 }
@@ -141,36 +116,36 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-.no-repo{
-    width: 600px;
-    height: 250px;
-    border-radius: 10px;
-    margin: 20px 0;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    box-shadow: 0px 5px 10px #00000017;
-    h4{
-        width: 300px;
-        background: #CCCC;
-        height: 35px;
-    }
-    .dis-skel{
-        p{
-            width: 280px;
-            background: #CCCC;
-            height: 30px; 
-        }
-    }
-    .topic-skel{
+    .no-repo{
+        width: 600px;
+        height: 250px;
+        border-radius: 10px;
+        margin: 20px 0;
+        padding: 15px;
         display: flex;
-        p{
-            margin: 0 10px;
-            width: 90px;
+        flex-direction: column;
+        justify-content: space-around;
+        box-shadow: 0px 5px 10px #00000017;
+        h4{
+            width: 300px;
             background: #CCCC;
-            height: 20px; 
+            height: 35px;
+        }
+        .dis-skel{
+            p{
+                width: 280px;
+                background: #CCCC;
+                height: 30px; 
+            }
+        }
+        .topic-skel{
+            display: flex;
+            p{
+                margin: 0 10px;
+                width: 90px;
+                background: #CCCC;
+                height: 20px; 
+            }
         }
     }
 }

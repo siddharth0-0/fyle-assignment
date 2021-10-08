@@ -28,7 +28,7 @@ export class UserDetailComponent implements OnInit {
         console.log(err)
       }
     )
-    setTimeout( () =>{this.getRepos(this.sharedUser)},5000) //timeout is added to show the skeleton
+    setTimeout( () =>{this.getRepos(this.sharedUser)},4000) //timeout is added to show the skeleton
   }
 
   changePerPageItems(e) { // used for showing data per page
@@ -36,7 +36,7 @@ export class UserDetailComponent implements OnInit {
     this.getRepos(this.sharedUser);
   }
 
-  getRepos(pageNo){
+  getRepos(pageNo){ //Used For getting Repos according to pagenation or ShowPerPage
     console.log(pageNo)
     this.shareService.getUserRepositoryList(this.sharedUser,this.perPageItems,pageNo).subscribe( //this service returns the list of all the repository of the user
       res =>{
@@ -47,6 +47,10 @@ export class UserDetailComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  onRedirect(url:string){ //Redirects to the particular Repo
+    window.open(url);   
   }
 
 }

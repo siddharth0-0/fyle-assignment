@@ -1,10 +1,26 @@
 <app-nav-bar></app-nav-bar>
 <div class="main-wrapper">
+    <div class="right-wrap">
+        <div class="in-box">
+            <div class="in-wrap">
+                <label for="input">Enter Git Username</label>
+                <input type="text" placeholder="johnpapa"  [(ngModel)] = "userName">
+            </div>
+            <button type="submit" (click)="onSubmit()">Search</button>
+        </div>
+    </div>
+    <div class="left-wrap">
+        <img src="../../../assets/img/web1.png" alt="">
+    </div>
+   
+</div>
+
+<!-- <div class="main-wrapper">
     <div class="body-wrap">
         <div class="in-wrap">
             <label for="input">Enter GIT Username</label>
             <input type="text" placeholder="johnpapa"  [(ngModel)] = "userName">
         </div>
-        <button type="submit" (click)="onSubmit()">Submit</button>
+        <button type="submit" (click)="onSubmit()">Search</button>
     </div>
-</div>
+</div> -->

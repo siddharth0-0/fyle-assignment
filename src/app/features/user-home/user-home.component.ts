@@ -17,7 +17,16 @@ export class UserHomeComponent implements OnInit {
   }
 
   onSubmit(){
-    this.shareService.shareUserName = this.userName; //sending inputs value "username" to the user-detail component through service
-    this.route.navigate(['repo']);
+    this.shareService.getUserDetail(this.userName).subscribe(
+      res=>{
+        if(res){
+          this.shareService.shareUserName = this.userName; //sending inputs value "username" to the user-detail component through service
+          this.route.navigate(['repo']);
+        }
+      },
+      err=>{
+        console.log(err.message);
+      }
+    )
   }
 }
